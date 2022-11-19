@@ -24,12 +24,6 @@ Route::get('/', function () {
     }
 });
 
-Route::get('cache', function() {
-    $output = new BufferedOutput;
-//    Artisan::call('config:cache', [], $output);
-    Artisan::call('cache:clear', [], $output);
-});
-
 Route::middleware(['auth', 'verified'])->group(function() {
 
     Route::get('/dashboard', function () {
